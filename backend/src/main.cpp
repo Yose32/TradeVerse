@@ -72,7 +72,13 @@ int main() {
         portfolioManager->applyTrade(t5);
     }
 
-    api::HttpServer server(8080);
+    int port = 8080;
+
+    if (const char* envPort = std::getenv("PORT")) {
+    port = std::atoi(envPort);
+    }
+
+api::HttpServer server(port);
 
     auto authenticateRequest = [&](const api::HttpRequest& req, models::User& outUser) -> bool {
         if (req.authUserToken.empty()) return false;
