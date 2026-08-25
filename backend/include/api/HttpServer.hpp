@@ -20,6 +20,10 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
+
+using SOCKET = int;
+constexpr SOCKET INVALID_SOCKET = -1;
+constexpr int SOCKET_ERROR = -1;
 #endif
 
 namespace tradeverse {
