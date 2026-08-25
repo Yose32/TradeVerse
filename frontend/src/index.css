@@ -1,0 +1,53 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#080d1a] text-slate-100 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Financial Terminal Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1329;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glow utility classes */
+.glow-success {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+
+.glow-danger {
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.25);
+}
+
+.glow-brand {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
