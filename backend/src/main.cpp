@@ -84,7 +84,11 @@ api::HttpServer server(port);
         if (req.authUserToken.empty()) return false;
         return authManager->validateToken(req.authUserToken, outUser);
     };
-
+    server.addRoute("GET", "/healthz",
+        [](const api::HttpRequest& req) {
+            return api::HttpResponse(200, "OK");
+        }
+    );
     server.addRoute("POST", "/api/auth/register", [&](const api::HttpRequest& req) {
         std::string username = json::extractString(req.body, "username");
         std::string email = json::extractString(req.body, "email");
