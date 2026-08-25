@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <cstdlib>
 
 #include "../include/dsa/MaxHeap.hpp"
 #include "../include/dsa/MinHeap.hpp"
