@@ -138,8 +138,13 @@ private:
         std::cout << "[TradeVerse Backend] HTTP Server running on http://127.0.0.1:" << port << std::endl;
 
         while (running) {
-            sockaddr_in clientAddr{};
+        sockaddr_in clientAddr{};
+
+            #ifdef _WIN32
             int clientLen = sizeof(clientAddr);
+            #else
+            socklen_t clientLen = sizeof(clientAddr);
+            #endif
             SOCKET clientSocket = accept(serverSocket, (struct sockaddr*)&clientAddr, &clientLen);
             if (clientSocket != INVALID_SOCKET) {
                 std::thread([this, clientSocket]() {
